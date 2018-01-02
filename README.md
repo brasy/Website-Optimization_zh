@@ -36,9 +36,16 @@ Optimization step:
 optimize views/pizza.html, and views/js/main.js to match frames per second rate is 60 fps or higher.
 
 Optimization step:
-1. run google chrome performance, and get the fps, check the call function with bad performance
-2. find detail lines in the call function with bad performance
+1. run google chrome performance, and get the fps, check the Javascript call function with bad performance
+2. find detail lines in the Javascript call function with bad performance
 3. modify the js code
-4. run performance and optimize again
-4. check other performance, when do more operation: reload page, reflash the page, enlarged and reduce the page and so on
-5. check and modify the call function(main.js), such as for loop, comments and so on.
+4. run `performance` and `console` in chrome, optimize again
+5. check other performance, when do more operation:
+```window.addEventListener('scroll', function() {...}``` scroll page, 
+```document.addEventListener('DOMContentLoaded', function() {}``` reload the page, 
+enlarged and reduce the page and so on.
+6. check and modify the call function(main.js), such as for loop, comments.
+
+### Part 3: Edit README.md
+1. how to run the project
+2. what have done to optimise the project
