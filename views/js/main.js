@@ -507,7 +507,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.getElementsByClassName('.mover');
+  var items = document.getElementsByClassName('mover');
 
   // document.body.scrollTop is no longer supported in Chrome.
   var scrollTop =  window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
@@ -527,7 +527,6 @@ function updatePositions() {
     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
   }
-  window.requestAnimationFrame(updatePositions);
 }
 
 // runs updatePositions on scroll
