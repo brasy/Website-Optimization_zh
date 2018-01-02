@@ -514,9 +514,9 @@ function updatePositions() {
   var scrFac = scrollTop / 1250;
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin(scrFac + (i % 5));
-    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     //for layout cost most, change position
-    items[i].style.transform="translateX("+ 800 * phase+ "px", 100 * phase+ "px)";
+    //items[i].style.transform="translateX("+ items[i].basicLeft + 100 * phase+ "px)";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -540,7 +540,7 @@ window.addEventListener('scroll', function() {
 function preparePizza(){
   var cols = 8;
   var s = 256;
-  var winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  var winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   var totalPizzas = (winHeight / s) * cols;
   var elem;
   for (var i = 0; i < totalPizzas; i++) {
@@ -557,6 +557,6 @@ function preparePizza(){
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
-  preparePizza();
+  preparePizza();
   window.requestAnimationFrame(updatePositions);
 });
